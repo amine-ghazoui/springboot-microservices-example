@@ -3,6 +3,7 @@ package org.ghazoui.billingservice.entities;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
+import org.ghazoui.billingservice.model.Product;
 
 @Entity
 @Data
@@ -13,8 +14,11 @@ public class ProductItem {
     private Long id;
     private String productId;
     private int quantity;
-    private double price;
+    private double unitPrice;
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Bill bill;
+    @Transient
+    private Product product;
 
 }

@@ -18,7 +18,7 @@ public class Bill {
     @Id @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;
     private Date billingDate;
-    private Long CustomerId;
+    private Long customerId;
 
     @OneToMany(mappedBy = "bill")
     private List<ProductItem> productItems = new ArrayList<>();

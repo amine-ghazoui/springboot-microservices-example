@@ -12,10 +12,10 @@ import java.util.List;
 public interface CustomerRestClient {
 
     @GetMapping("/api/customers/{id}")
-    Customer findCustomerById(@PathVariable Long id);
+    Customer getCustomerById(@PathVariable Long id);
 
     @GetMapping("/api/customers")
-    PagedModel<Customer> findAllCustomers();
+    PagedModel<Customer> getAllCustomers();
 
 }
 
