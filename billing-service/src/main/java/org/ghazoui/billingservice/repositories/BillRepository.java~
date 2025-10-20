@@ -1,0 +1,4 @@
+package org.ghazoui.billingservice.repositories;
+
+public interface BillRepository {
+}

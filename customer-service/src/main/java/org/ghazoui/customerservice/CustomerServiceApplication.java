@@ -1,13 +1,16 @@
 package org.ghazoui.customerservice;
 
+import org.ghazoui.customerservice.config.CustomerConfigParams;
 import org.ghazoui.customerservice.entities.Customer;
 import org.ghazoui.customerservice.repositories.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableConfigurationProperties(CustomerConfigParams.class)
 public class CustomerServiceApplication {
 
 	public static void main(String[] args) {
@@ -40,3 +43,8 @@ public class CustomerServiceApplication {
 		};
 	}
 }
+
+/*
+@EnableConfigurationProperties : pour charger les propriétés de configurations de notre application.
+au démarrage va charger cette configuration "CustomerConfigParams"
+ */
